@@ -1,0 +1,337 @@
+body		{ margin: 0; background-color: white; color: black; font-family: Arial, "Arial Unicode MS", sans-serif; }
+form		{ display: inline; }
+
+/*** Headings ***/
+h1		{ margin: 0.8ex; float: left; }
+h2		{ margin: 1ex; font-size: 2em; }
+#Reset	{ display: block; }
+h1 img	{ border: none; display: block; width: 120px; height: 55px; }
+
+.adsbygoogle	{ display: block; text-align: center; }
+#OarJars		{ position: relative; padding: 0 2em; }
+#OarJarsClose	{ cursor: pointer; }
+#OarJarsClose::before	{ content: '✕'; position: absolute; top: -0.2em; right: 0.5em; cursor: pointer; font-size: 1.3em; }
+#OarJarsText	{ display: none; border: thin solid gray; border-radius: 0.5ex; padding: 1ex 1em; font-size: 1.1em; background-color: rgb(245, 245, 245); }
+
+/*** Tab tip ***/
+#TabTip			{ float: left; font-size: small; background-color: #006; color: white; position: absolute; padding: 0.75ex 1ex; border-radius: 0.8ex; margin-left: 31em; margin-top: 0.5ex; cursor: pointer; display: none; transition: margin-left 2s linear; }
+#TabTip:after	{ content: " "; height: 0; position: absolute; width: 0; border: 1ex solid transparent; border-top-color: #006; top: 100%; right: 1.5em; }
+
+footer			{ font-size: small; margin: 1em auto; text-align: center; }
+footer a		{ text-transform: uppercase; margin: 0 1em; text-decoration: inherit; }
+
+/*** Tabs and Views ***/
+ul				{ list-style: none; margin: 0; padding: 0; font-size: large; letter-spacing: -1px; }
+.TabList		{ display: inline; }	/* should be body > ul > li */
+ul li			{ margin: 0 0.3ex; }
+li li			{ margin: 0; }			/* undoes previous line until > selector is acceptable */
+li a:hover, li a:focus,
+li:hover, li:hover label	{ color: blue; background-color: white; }
+.Selected		{ background-color: white; color: black ! important; cursor: default; }
+.Views .Selected, .Views .Unselected	{ transition: background-color 1s ease-in-out; }
+.Throb			{ transition: background-color 250ms ease-in-out; }
+
+/*** Tabs ***/
+li a.MainTab:hover, li a.MainTab:focus	{ color: white; background-color: #5B90F6; }
+.WriteupTab		{ position: relative; z-index: 4; }
+.Divider		{ color: #6493CB; }
+.Tabs			{ border-bottom: 1px solid blue; margin-bottom: 1ex; background-color: #D0D0FF; white-space: nowrap; }
+li a					{ padding: 0 0.8ex; text-decoration: none; color: white; background-color: #0276FD; }
+.MainTab				{ display: inline-block; line-height: 2.2; border: 1px solid blue; border-bottom: none; } /* should be body > ul > li > a */
+.MainTab, #WikiTitle	{ border-radius: 1ex 1ex 0 0; }
+.MainTab.Selected		{ position: relative; top: 1px; }
+
+/*** Subtabs ***/
+ul ul			{ display: none; position: absolute; left: 0; *top: 2.2em; min-width: 100%; background-color: #0276FD; border: 1px solid blue; border-top: none; }
+a:hover + ul, li:hover ul,
+a:focus + ul	{ display: block; }
+li li a			{ display: block; line-height: 1.75; font-size: medium; }
+
+/*** Views ***/
+.Views			{ float: right; margin-right: 1ex; }
+.Views li		{ padding: 0.5ex 0.7ex; float: left; }
+.Views li, #AltSlider .Highlight	{ border-radius: 1ex; }
+li input:focus + label				{ color: #0276FD; }
+
+#Navigation			{ font-size: small; text-align: right; background-color: #D0D0FF; padding: 0.3em 0.3em 1em 1em; }
+#Navigation a, #Navigation div		{ display: inline-block; margin: 0 1ex; text-decoration: none; color: #000088; vertical-align: text-bottom ! important; }
+#Navigation a:hover, #Navigation a:focus	{ text-decoration: underline; }
+
+.Paren				{ padding: 1.5ex 0 1.5ex 2ex; font-size: 1.1em; width: 764pt; }
+#SearchInput		{ width: 6em; font-size: 1.1em; }
+#SearchInput:focus	{ color: inherit; position: fixed; right: 0; margin-right: 5px; z-index: 200; outline: 5px solid rgba(208, 208, 255, 0.5); }
+.Searching #langswitch	{ margin-right: 8.3em; }
+#langswitch			{ white-space: nowrap; margin: 0 1em; }
+#langswitch select	{ height: 1.7em; }
+
+table				{ border-collapse: separate; }
+#Main				{ border-collapse: collapse; margin: 1ex auto 0; clear: both; }
+thead td			{ border-bottom: thick solid white; }
+thead tr			{ vertical-align: top; }
+thead a, .Period a, #DecayModes a, #Block a, #Series a	{ display: block; text-decoration: none; color: black; }
+thead a:hover, .Period a:hover, #Series a:hover, #DecayModes a:hover, #Block a:hover	{ text-decoration: underline; color: #000088; }
+.Period:hover, .Period a:focus, thead td:hover, thead td a:focus, .HoverOrbital, .Highlight, .KeyRegion .Highlight label	{ background-color: yellow; }
+thead a, .Period a	{ font-size: x-large; text-align: center; font-weight: normal; }
+thead a:nth-child(2){ font-size: 0.7em; }
+#AltSlider .Highlight		{ border: thin solid; background-color: inherit; }
+#AltSlider .Highlight label	{ background-color: inherit; }
+
+.Upscale			{ font-size: 1.4em; }
+#Properties			{ position: relative; height: 1%; }
+.PropertiesRight	{ border-left: 1px solid #999; float: right; }
+#Closeup, #IsotopeForm, #Properties, #Block, #Hund, #DecayModes, #Temperature	{ display: none; }
+#CloseupHolder		{ width: 10.4em; }
+.OxidationStates	{ line-height: 0.9; color: #888; }
+.OxidationStates .Common	{ font-weight: bold; color: black; }
+#Properties, #IsotopeForm, #DecayModes	{ white-space: nowrap; font-size: 0.9em; }
+#Properties th, #IsotopeForm th		{ font-weight: normal; letter-spacing: -0.04em; }
+#Properties th, #IsotopeForm th, #CompoundResults div	{ text-align: left; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAABCAMAAACv+t29AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRF09PTAAAA////vO7aCQAAAAN0Uk5T//8A18oNQQAAABFJREFUeNpiYGJgZCIFAwQYAAXpAD0ObT/WAAAAAElFTkSuQmCC"); background-repeat: repeat-x; background-position: 40% 1.15em; }
+.KeyRegion label	{ background: white; margin-right: 1ex; }
+.Radio				{ white-space: nowrap; min-width: 5em; display: -moz-inline-box; display: inline-block; padding-right: 0.3ex; }
+#DecayModes			{ border: none; float: right; }
+#DecayModes td		{ letter-spacing: -1px; }
+#DecayModes .NoDecayText td a	{ display: none; }
+
+#Matches							{ font-size: 0.9em; text-align: center; }
+#CompoundSearch						{ font-size: 1.2em; margin-left: 1em; margin-top: 0.2em; width: 80%; border: thick solid #AAF; }
+
+#CompoundResults					{ display: none; height: 9em; width: 25em; font-size: 1.2em; overflow: auto; border-top: thin solid #CCC; border-bottom: thin solid #CCC; float: right; -webkit-overflow-scrolling: touch; }
+#CompoundResults div				{ background-position: 40% 1em; line-height: 1.3; clear: both; }
+#CompoundResults sub				{ line-height: 0; }
+#CompoundResults .Highlight	span,
+#CompoundResults .Highlight	a		{ background-color: yellow; }
+#CompoundResults span, #CompoundResults a	{ background: white; padding: 0 0.5ex; }
+#CompoundResults a					{ clear: right; float: right; letter-spacing: -1px; word-wrap: break-word; text-align: right; }
+#CompoundResults i					{ display: inline; }
+
+#CountArrows table					{ display: inline-block; *display: inline; font-size: 1.2em; margin: 0.2ex 0.5ex; text-align: center; border-collapse: collapse; }
+#CountArrows td						{ padding: 0; line-height: 1; }
+#CountArrows .SymbolCell			{ font-weight: bold; height: 1.9em; width: 1.9em; vertical-align: middle; }
+#CountArrows sub					{ line-height: 0; font-weight: normal; }
+#CountArrows .Arrow					{ cursor: pointer; -ms-user-select: none; -moz-user-select: none; -webkit-user-select: none; }
+
+/*** Legend ***/
+#ExternalKey		{ margin: 1em 0; font-size: 0.8em; }
+#KeyContainer, #NewContainer	{ margin: auto; width: 95%; }
+.KeyRegion input	{ height: 16pt; margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; display: block; }
+#Series th:first-child	{ border-top-left-radius: 1ex; }
+#Series th:last-child	{ border-top-right-radius: 1ex; }
+#Series, #MatterState, #DecayModes	{ font-size: 1.36em; }
+#Series				{ line-height: 1; float: right; hyphens: auto; border-spacing: 0.2em; }
+#Series th			{ border: 2px solid black; border-bottom: none; }
+#Series td			{ padding: 0.2em; vertical-align: top; font-size: 0.85em; }
+#Series td[rowspan] a	{ writing-mode: tb-rl; -webkit-writing-mode: vertical-rl; writing-mode: vertical-rl; height: 7em; }
+#Temperature		{ font-size: 3em; margin-right: 1em; float: right; }
+#Temperature td		{ text-align: right; }
+#Temperature th, #MatterState th	{ text-align: left; font-weight: normal; }
+#MatterState td		{ text-align: center; height: 1.5em; width: 1.5em; border: 2px solid black; }
+#MatterState acronym{ width: auto; }
+#Block				{ font-size: 1.5em; float: right; }
+#Block th			{ height: 1.5em; width: 1.5em; }
+#Orbital			{ height: 108px; width: 108px; position: absolute; bottom: -5px; right: 0; clip: rect(5px auto 103px 5px); }
+#lmn				{ position: absolute; right: 110px; bottom: 0; font-size: 1.5em; }
+#Hund				{ font-size: 0.9em; position: relative; float: right; }
+#Hund #lmn td		{ border: none; }
+#Hund td td			{ border: 1px solid blue; line-height: 1.3; cursor: default; }
+#Hund td td span	{ visibility: hidden; }
+
+/*** Colors ***/
+.Solid acronym, #MatterState .Solid		{ color: #000000; }
+.InvertState :first-child.Solid			{ background-color: #000000; }
+.Liquid acronym, #MatterState .Liquid	{ color: #0000DD; }
+.InvertState :first-child.Liquid 		{ background-color: #0000DD; }
+.Gas acronym, #MatterState .Gas			{ color: #990000; }
+.InvertState :first-child.Gas			{ background-color: #990000; }
+.Unknown acronym, #MatterState .Unknown	{ color: #667766; }
+.InvertState :first-child.Unknown		{ background-color: #667766; }
+.InvertState .Element a, .InvertState .Element acronym, .InvertState #MatterState acronym, #MatterState .InvertState acronym	{ color: white; }
+
+.Element, .Series td, .Block th	{ background-color: #DDDDDD; }
+
+.Alkali .Alkali			{ background-color: #FFCC33; }
+.Alkaline .Alkaline		{ background-color: #FFFF44; }
+.Lanthanoid .Lanthanoid	{ background-color: #FFBB99; }
+.Actinoid .Actinoid		{ background-color: #EEBBDD; }
+.Transition .Transition	{ background-color: #DDBBBB; }
+.Poor .Poor, .Boron .Boron				{ background-color: #99DDCC; }
+.Metalloid .Metalloid, .Carbon .Carbon	{ background-color: #77DD88; }
+.Nonmetal .Nonmetal, .Pnictogen .Pnictogen	{ background-color: #22FF22; }
+.Chalcogen .Chalcogen	{ background-color: #00AAAA; }
+.Halogen .Halogen		{ background-color: #22EECC; }
+.Noble .Noble			{ background-color: #77CCFF; }
+.Undiscovered			{ background-color: #FFFFFF; }
+.InnerBorder			{ background-color: #CCCCFF; }
+.InnerHover .InnerBorder{ background-color: #BBBBFF; cursor: pointer; }
+label, #Temperature th, .Period a, thead a { color: #000088; }
+
+.s .s	{ background-color: rgb(255, 163, 194); }
+.p .p	{ background-color: rgb(102, 255, 171); }
+.d .d	{ background-color: rgb(200, 255, 61); }
+.f .f	{ background-color: rgb(184, 184, 255); }
+
+.Videos #Series, .Photos #Series, .WebElements #Series, .Podcasts #Series	{ display: none ! important; }
+.Videos	.Element	{ background-color: #99CC99; }
+.Photos .Element	{ background-color: #9999FF; }
+.Podcasts .Element	{ background-color: #ED8D04; }
+.WebElements .s		{ background-color: #6699FF; }
+.WebElements .p		{ background-color: #FFCC00; }
+.WebElements .d		{ background-color: #FF9999; }
+.WebElements .f		{ background-color: #00CC33; }
+
+/*** Borders ***/
+.InnerBorder	{ color: #0000FF; text-align: center; line-height: 1.4; }
+.InnerBorder span	{ color: #8888FF; }
+.BlueLeft		{ border-left: 5px solid #66F; }
+.BlueRight		{ border-right: 5px solid #66F; }
+.BlueTop		{ border-top: 5px solid #66F; }
+.BlueBottom		{ border-bottom: 5px solid #66F; }
+.InnerHover .BlueLeft, .InnerHover .BlueRight, .InnerHover .BlueTop, .InnerHover .BlueBottom	{ border-color: #6666FF; }
+.Element, .Shells	{ border: thick solid white; }
+.Shells			{ color: gray; padding-top: 0.2em; }
+.Element, .Clean, #Legend, .Shells, thead td	{ border-width: 3px; }
+td.Hover, .Element a:focus
+				{ outline: 7px solid #999; outline-color: rgba(0, 0, 0, 0.25); }
+#Series .Highlight, #Block .Highlight
+				{ outline: 5px solid #BBB; outline-color: rgba(0, 0, 0, 0.3); }
+td.Lock			{ outline: 3px solid #666; outline-offset: -3px; outline-color: rgba(0, 0, 0, 0.5); }
+
+.DimText a		{ opacity: 0.25; *zoom: 1; }
+thead td		{ border-right: 1pt solid #CCCCFF; }
+#isotopeholder	{ position: absolute; font-size: medium; z-index: 3; }
+#isotopeholder .Element	{ border-width: medium; opacity: 0; transition: opacity 300ms ease-in; }
+
+.IsoHolder .Element		{ border-color: white; }
+.Stable, .AlphaEmission, .BetaDecay, .BetaPlusDecay, .DoubleBetaDecay, .DoubleBetaPlusDecay, .ElectronCapture, .NeutronEmission, .TwoNeutronEmission, .PositronEmission, .ProtonEmission, .TwoProtonEmission, .SpontaneousFission	{ border: medium solid white; }
+.Stable .Stable					{ border: medium solid black; }
+.AlphaEmission .AlphaEmission	{ border: medium solid orange; }
+.BetaDecay .BetaDecay			{ border: medium solid blue ! important; }
+.BetaPlusDecay .BetaPlusDecay	{ border: medium solid purple ! important; }
+.DoubleBetaDecay .DoubleBetaDecay		{ border: medium double blue; }
+.DoubleBetaPlusDecay .DoubleBetaPlusDecay { border: medium double purple; }
+.ElectronCapture .ElectronCapture		{ border: medium dashed purple; }
+.NeutronEmission .NeutronEmission		{ border: medium solid green ! important; }
+.TwoNeutronEmission .TwoNeutronEmission	{ border: medium double green; }
+.PositronEmission	{ }
+.ProtonEmission .ProtonEmission			{ border: medium solid red ! important; }
+.TwoProtonEmission .TwoProtonEmission	{ border: medium double red; }
+.SpontaneousFission .SpontaneousFission	{ border: medium dotted black; }
+
+/*** Element boxes ***/
+.Element			{ padding: 2px 3px; white-space: nowrap; }
+.Element a			{ text-decoration: none; display: block; padding: 0; color: inherit; }
+
+#CloseupElement		{ padding: 0.2cm; font-size: 2.2em; white-space: nowrap; width: 3.84em; }
+#CloseupElement big *	{ line-height: normal; }
+#CloseupElement i, #CloseupElement em	{ font-size: 0.55em; overflow: visible; }
+small, big			{ display: -moz-inline-block; display: inline-block; font-size: 100%; }
+em, i, acronym, strong	{ display: block; }
+em, i				{ width: 4.456em; line-height: 1; font-size: 0.7em; font-style: normal; overflow: hidden; }
+.Element i			{ text-overflow: ellipsis; }
+acronym				{ font-size: 1.2em; font-weight: bold; width: 2.6em; }
+#Legend acronym		{ letter-spacing: -1px; font-weight: normal; width: auto; }
+strong				{ font-size: 0.8em; font-weight: normal; }
+em.Long				{ letter-spacing: -1px; }
+#isotopeholder .Element		{ position: absolute; }
+#isotopeholder acronym		{ line-height: 1.5; width: auto; margin: 0.2ex 0; }
+#isotopeholder .Prefix		{ vertical-align: bottom; display: inline-block; text-align: right; }
+#isotopeholder .TopBottom	{ line-height: 1; min-height: 1em; display: block; font-size: 70%; font-weight: normal; letter-spacing: -1px; }
+* html .Element, .NoGradient .Element	{ background-image: none; }
+small				{ font-size: 0.52em; text-align: right; line-height: 1; width: 1em; }
+big, small, .Shells	{ vertical-align: top; }
+.Shells small		{ width: auto; }
+#Closeup small		{ width: 1.3em; }
+
+/*** Wikipedia iframe ***/
+#WikiBox			{ position: fixed; z-index: 101; cursor: progress; border-radius: 1.5ex; display: none; }
+#WikiBox.Expanding	{ border: 2px solid black; display: block; transition: all 1s ease-in-out; }
+.Expanding h1, .Expanding h2	{ visibility: hidden; }
+#WikiBox.Expanded				{ top: 15%; left: 15%; width: 70%; height: 70%; border: thick solid #88F; display: block; background-color: white; }
+.Expanded h1, .Expanded h2		{ visibility: visible; transition-delay: 1s; }
+#WikiFrameBox		{ position: absolute; top: 2em; left: 1ex; right: 0; bottom: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
+#WikiFrame			{ height: 100%; width: 100%; }
+#WikiBox > #WikiFrameBox > iframe	{ position: absolute; }
+#WikiBox h1			{ border: thin inset; margin: 0; font-family: Verdana, sans-serif; font-size: small; line-height: 2; padding-left: 1ex; cursor: move; background-color: #D0D0FF; float: none; }
+h1 button			{ float: right; font-size: 14pt; width: 19pt; height: 19pt; text-align: center; padding: 0; line-height: normal; }
+
+/*** Writeup providers ***/
+#WikiBox.Videos			{ background-color: #DADADA; }
+#WikiBox.Photos			{ background-color: black; }
+
+/*** Slider ***/
+#OrbitalString		{ width: 10em; vertical-align: top; }
+#OrbitalString, #SliderCell		{ font-size: 1.28em; }
+.SliderTrack		{ position: relative; height: auto; border: 1px solid white; margin-top: 11px; width: 78%; float: left; }
+.SliderTrack .SliderSlit{ position: relative; border: 2px inset; background-color: ButtonShadow; height: 4px; font-size: 0; margin: 10px 4%; }
+.SliderSlit img		{ width: 100%; height: 100%; }
+.SliderTrack .SliderBar	{ position: absolute; margin: 0; padding: 0; top: 0; width: 8%; height: 27px; cursor: pointer; }
+.SliderSelect		{ margin-top: 11px; width: 18%; display: none; }
+.SliderDisplay		{ text-align: right; margin-top: 11px; width: 17%; }
+#SliderHolder		{ position: relative; height: 2.5em; overflow: hidden; }
+#SliderHolder > div > div	{ transition: all 0.5s ease-in-out; }
+
+/*** Social media ***/
+#Navigation .media {
+	width: 16px; height: 16px;
+	letter-spacing: 5px;
+	margin: 0;
+	overflow: hidden;
+	text-transform: lowercase;
+	border-radius: 1px;
+	box-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+#Navigation .Facebook {
+	font: bold 16px/17px Arial, sans-serif;
+	text-indent: 8px;
+	color: white;
+	background: #3C5A98;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+}
+#Navigation .Twitter {
+	font: bold 15px/14px Tahoma, sans-serif;
+	text-indent: 5px;
+	color: #56BDD8;
+	background: #DAF6F7;
+	text-shadow: 1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white, -1px 1px 1px white;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DBF7F8), to(#88E1E6));
+	background: -moz-linear-gradient(top, #DBF7F8, #88E1E6);
+}
+#Navigation .GooglePlus {
+	font: 16px/11px Georgia, serif;
+	letter-spacing: -2px;
+	text-indent: 1px;
+	color: white;
+	background: #D34836;
+}
+
+@media (max-width: 60em) {
+	.Tabs			{ padding-top: 5ex; text-align: center; }
+	.Tabs li		{ text-align: left; }
+	#Navigation .media, #___plusone_0	{ display: none ! important; }
+}
+
+@media (orientation: portrait) and (max-device-width: 800px) {
+	#SliderHolder			{ height: 4em ! important; padding: 1ex; font-size: 3em; }
+	.KeyRegion input		{ display: inline; height: auto ! important; }
+	#ExternalKey #Series	{ font-size: 1.5em; }
+	#Properties label		{ letter-spacing: -1px; }
+	.Radio					{ margin-top: 1ex; margin-bottom: 1ex; }
+}
+
+@media (orientation: portrait) and (max-device-width: 768px) {
+	#ExternalKey			{ font-size: 1em; }
+}
+
+@media (orientation: portrait) and (max-device-width: 600px) {
+	#Navigation				{ font-size: 0.5em; }
+	#ExternalKey			{ font-size: 0.5em; }
+	.Views					{ display: none; }
+	.Tabs					{ padding-top: 0; font-size: 0.9em; clear: left; }
+	#Main					{ font-size: 0.57em; margin-right: 1px; }
+	.Period a				{ display: none; }
+}
+
+/* Safari can't handle writing-mode properly. Fix widths. */
+_::-webkit-full-page-media, _:future, :root #Series td[rowspan] a {
+	display: block; width: 2em;
+}
+/* vim: set syntax=css: */
